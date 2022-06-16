@@ -9,7 +9,7 @@ const iceCreamReducer = produce((draft, action) => {
   switch (action.type) {
     case BUY_ICECREAM: {
       draft.numOfIceCreams = draft.numOfIceCreams - 1
-      break
+      return draft
     }
 
     default:

@@ -16,19 +16,19 @@ const reducer = produce((draft, action) => {
   switch (action.type) {
     case FETCH_USERS_REQUEST: {
       draft.loading = true
-      break
+      return draft
     }
     case FETCH_USERS_SUCCESS: {
       draft.loading = false
       draft.users = action.payload
       draft.error = ""
-      break
+      return draft
     }
     case FETCH_USERS_FAILURE: {
       draft.loading = false
       draft.users = []
       draft.error = action.payload
-      break
+      return draft
     }
     default:
       return draft
